@@ -70,14 +70,14 @@ while choice != "0":
                 Father=SonFather[Son]
                 print(Son+"'"+"s father is ", Father[1], ".")
                 ExtendedFamily += 1
-                if Extend Family > 7:
+                if ExtendedFamily<7:
                     string="Do you wish to find out who is "+Father[1]+"'"+"s dad? "
                     Continue=input(string)
                     while Continue not in ["y","Y","yes","Yes","n","N","No","no","NO"]:
                         string = "Do you wish to find out who is "+Father[1]+"'"+"s dad? "
                         Continue=input(string)
-                    Father=Father[1]
-                    Son=Father
+                Father=Father[1]
+                Son=Father
                
                 
             
