@@ -1,5 +1,5 @@
-SonFather = {"Luke Skywalker":[(Father, "Darth Vader"),(Grand-Father, "Obi-Wan Kenobi")],"Luke Gosnell":[(Father, "Thomas Morrissey"), (Grand-Father, "Jose Chica")],
-             "Jose Chica":[(Father, "Gaberial Iglesias"), (Grand-Father, "Homer Simpon")],"Tyler Guerra":[(Father, "Kurt Russel"), (Grand-Father, "Bruce Cambell")]}
+SonFather = {"Luke Skywalker":("Father", "Darth Vader"),"Darth Vader":("Father", "Jose Chica"),
+             "Jose Chica":("Father", "Tyler Guerra"),"Tyler Guerra":("Father", "Kurt Russel"), "Kurt Russel":("Father", "Luke Goesnell"), "Luke Goesnell":("Father","Luke Skywalker")}
 choice = None
 while choice != "0":
 
@@ -12,6 +12,7 @@ while choice != "0":
     2 - Add a Son-Father pair
     3 - Change a Son-Father pair
     4 - Delete a son-Father pair
+    5 - Look Up The Extended Family
     """
     )
     
@@ -59,8 +60,27 @@ while choice != "0":
             print("\nOkay, I deleted", Son)
         else:
             print("\nI can't do that!", Son, "doesn't exist in the dictionary.")
+
+    elif choice == "5":
+        ExtendedFamily=0
+        Continue= "y"
+        Son=input("Who would you like to look up?")
+        while ExtendedFamily != 7 and Continue in ["y", "Y", "yes", "Yes"]:
+            if Son in SonFather:
+                Father=SonFather[Son]
+                print(Son+"'"+"s father is ", Father[1], ".")
+                ExtendedFamily += 1
+                if Extend Family > 7:
+                    string="Do you wish to find out who is "+Father[1]+"'"+"s dad? "
+                    Continue=input(string)
+                    while Continue not in ["y","Y","yes","Yes","n","N","No","no","NO"]:
+                        string = "Do you wish to find out who is "+Father[1]+"'"+"s dad? "
+                        Continue=input(string)
+                    Father=Father[1]
+                    Son=Father
+               
+                
             
-    # some unknown choice
     else:
         print("\nSorry, but", choice, "isn't a valid choice.")
   
